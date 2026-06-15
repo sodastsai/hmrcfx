@@ -1,0 +1,27 @@
+{
+  "features": {
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+  },
+  "remoteUser": "codespace",
+  "mounts": [
+    "source=claude-code-config-${devcontainerId},target=/home/codespace/.claude,type=volume"
+  ],
+  "containerEnv": {
+    "CLAUDE_CONFIG_DIR": "/home/codespace/.claude",
+    "LANG": "en_US.UTF-8",
+    "LC_ALL": "en_US.UTF-8"
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "ms-vscode.vscode-loc-en"
+      ],
+      "settings": {
+        "locale": "en",
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  }
+}
